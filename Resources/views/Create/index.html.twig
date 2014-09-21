@@ -1,0 +1,18 @@
+{#
+This file is part of the CampaignChain package.
+
+(c) Sandro Groganz <sandro@campaignchain.com>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+
+{% extends 'CampaignChainCoreBundle:Base:base.html.twig' %}
+
+{% block body %}
+     <div class="jumbotron">
+         <p>Connect to the respective Twitter account by logging in to Twitter. Your username and password will remain with Twitter and will not be stored in this application.</p>
+         <p><a class="btn btn-primary btn-lg" role="button" onclick="popupwindow('{{ path('campaignchain_channel_twitter_login') }}','',600,600);">Connect with Twitter</a></p>
+     </div>
+
+ {% endblock %}
