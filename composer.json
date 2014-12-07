@@ -17,5 +17,20 @@
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Channel\\TwitterBundle\\": "" }
+    },
+    "extra": {
+        "campaignchain": {
+            "kernel": {
+                "classes": [
+                    "CampaignChain\\Channel\\TwitterBundle\\CampaignChainChannelTwitterBundle"
+                ],
+                "routing":
+                {
+                    "name": "campaignchain_channel_twitter",
+                    "resource": "@CampaignChainChannelTwitterBundle/Resources/config/routing.yml",
+                    "prefix": "/"
+                }
+            }
+        }
     }
 }
