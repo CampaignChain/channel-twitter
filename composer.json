@@ -12,13 +12,22 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "campaignchain/core": "dev-master",
         "campaignchain/security-authentication-client-oauth": "dev-master"
+=======
+        "campaignchain/core": "dev-master",
+        "campaignchain/security-authentication-client-oauth": "dev-master",
+        "guzzle/guzzle":"~3.9"
+>>>>>>> 1.0.0-beta.1
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Channel\\TwitterBundle\\": "" }
     },
     "extra": {
+        "branch-alias": {
+            "dev-1.0.0-beta.1": "1.0.0-dev"
+        },
         "campaignchain": {
             "kernel": {
                 "classes": [
