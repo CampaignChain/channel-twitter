@@ -1,7 +1,7 @@
 {
     "name": "campaignchain/channel-twitter",
     "description": "Connect with Twitter.",
-    "keywords": ["twitter","oauth"],
+    "keywords": ["twitter","oauth","campaignchain"],
     "type": "campaignchain-channel",
     "homepage": "http://www.campaignchain.com",
     "license": "Apache-2.0",
