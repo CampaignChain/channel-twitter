@@ -1,6 +1,6 @@
 {
     "name": "campaignchain/channel-twitter",
-    "description": "Connect with Twitter.",
+    "description": "Connect to Twitter.",
     "keywords": ["twitter","campaignchain"],
     "type": "campaignchain-channel",
     "homepage": "http://www.campaignchain.com",
