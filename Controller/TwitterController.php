@@ -55,8 +55,8 @@ class TwitterController extends Controller
 
             if($status){
                 try {
-                    $repository = $this->getDoctrine()->getManager();
-                    $repository->getConnection()->beginTransaction();
+                    $em = $this->getDoctrine()->getManager();
+                    $em->getConnection()->beginTransaction();
 
                     $wizard = $this->get('campaignchain.core.channel.wizard');
                     $wizard->setName($profile->displayName);
@@ -87,17 +87,17 @@ class TwitterController extends Controller
                     $twitterUser->setProfileImageUrl($profile->photoURL);
                     $twitterUser->setProfileUrl($profile->profileURL);
 
-                    $repository->persist($twitterUser);
-                    $repository->flush();
+                    $em->persist($twitterUser);
+                    $em->flush();
 
-                    $repository->getConnection()->commit();
+                    $em->getConnection()->commit();
 
                     $this->get('session')->getFlashBag()->add(
                         'success',
                         'The Twitter location <a href="#">'.$profile->displayName.'</a> was connected successfully.'
                     );
                 } catch (\Exception $e) {
-                    $repository->getConnection()->rollback();
+                    $em->getConnection()->rollback();
                     throw $e;
                 }
             } else {
