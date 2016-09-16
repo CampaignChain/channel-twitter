@@ -18,4 +18,4 @@ campaignchain_channel_twitter:
     # interval that should be between the latest identical post and the
     # new one below as per relative date formats in PHP (e.g. "+1 day"):
     # http://php.net/manual/en/datetime.formats.relative.php.
-    max_duplicate_interval: +2 days
+    max_duplicate_interval: +1 day
