@@ -38,9 +38,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('max_duplicate_interval')
-                    ->isRequired()
-                    ->cannotBeEmpty()
-                    ->defaultValue('cctid')
+                    ->defaultValue('+1 day')
             ->end()
         ;
 
