@@ -38,7 +38,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('max_duplicate_interval')
-                    ->defaultValue('+1 day')
+                    ->defaultValue('1 day')
             ->end()
         ;
 
