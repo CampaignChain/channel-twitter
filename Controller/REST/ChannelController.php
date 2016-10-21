@@ -38,8 +38,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
  */
 class ChannelController extends BaseModuleController
 {
-    const CONTROLLER_SERVICE = 'campaignchain.activity.controller.twitter.update_status';
-
     /**
      * Search for users on Twitter.
      *
@@ -53,37 +51,43 @@ class ChannelController extends BaseModuleController
      *
     [
         {
-            "twitter_status": {
-                "id": 26,
-                "message": "Alias quaerat natus iste libero. Et dolor assumenda odio sequi. http://www.schmeler.biz/nostrum-quia-eaque-quo-accusantium-voluptatem.html",
-                "createdDate": "2015-12-14T11:02:23+0000"
-            }
+            "insert_name":"ordnas",
+            "display_name":"Sandro Groganz",
+            "search_key":"ordnas Sandro Groganz",
+            "image":"http:\/\/pbs.twimg.com\/profile_images\/669150051386683392\/VYPoxcqJ_normal.jpg"
         },
         {
-            "status_location": {
-                "id": 63,
-                "status": "unpublished",
-                "createdDate": "2015-12-14T11:02:23+0000"
-            }
+            "insert_name":"Ordnas69",
+            "display_name":"Sandro Summa",
+            "search_key":"Ordnas69 Sandro Summa",
+            "image":"http:\/\/pbs.twimg.com\
+            /profile_images\/688442716074676225\/z5A7CmQs_normal.jpg"
         },
         {
-            "activity": {
-                "id": 82,
-                "equalsOperation": true,
-                "name": "Announcement 26 on Twitter",
-                "startDate": "2012-01-10T05:23:34+0000",
-                "status": "paused",
-                "createdDate": "2015-12-14T11:02:23+0000"
-            }
+            "insert_name":"sssaannddrrooo",
+            "display_name":"Ordnas",
+            "search_key":"sssaannddrrooo Ordnas",
+            "image":"http:\/\/pbs.twimg.com\/profile_images\/667602635013361664
+            \/s0qPns5T_normal.jpg"
         },
         {
-            "operation": {
-                "id": 58,
-                "name": "Announcement 26 on Twitter",
-                "startDate": "2012-01-10T05:23:34+0000",
-                "status": "open",
-                "createdDate": "2015-12-14T11:02:23+0000"
-            }
+            "insert_name":"OrdnasPB",
+            "display_name":"Sandro",
+            "search_key":"OrdnasPB Sandro",
+            "image":"http:\/\/pbs.twimg.com\/profile_images\/711797319553961984\/MvwFTuwt_normal.jpg"
+        },
+        {
+            "insert_name":"sandalagoa",
+            "display_name":"Ordnas Aiam",
+            "search_key":"sandalagoa Ordnas Aiam",
+            "image":"http:\/\/pbs
+            .twimg.com\/profile_images\/1550555986\/308999_10150323188574382_614399381_7994968_909345970_n_normal.jpg"
+        },
+        {
+            "insert_name":"ordnas24",
+            "display_name":"Sandro Bezerra",
+            "search_key":"ordnas24 Sandro Bezerra",
+            "image":"http:\/\/pbs.twimg.com\/profile_images\/544808863116304384\/IxcjtzZk_normal.jpeg"
         }
     ]
      *
@@ -114,9 +118,9 @@ class ChannelController extends BaseModuleController
             $locationService = $this->get('campaignchain.core.location');
             $location = $locationService->getLocation($params['location']);
 
-            /** @var TwitterClient $twitterRESTService */
-            $twitterRESTService = $this->get('campaignchain.channel.twitter.rest.client');
-            $connection = $twitterRESTService->connectByLocation($location);
+            /** @var TwitterClient $channelRESTService */
+            $channelRESTService = $this->get('campaignchain.channel.twitter.rest.client');
+            $connection = $channelRESTService->connectByLocation($location);
 
             $request = $connection->get('users/search.json?q='.$params['q'].'&count=6&include_entities=false');
             $response = $request->send()->json();
