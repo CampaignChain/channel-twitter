@@ -21,6 +21,12 @@ campaignchain_channel_twitter_login:
     defaults: { _controller: CampaignChainChannelTwitterBundle:Twitter:login }
 
 # REST routes are being created automatically via FOSRestBundle.
-campaignchain_channel_twitter_rest:
+campaignchain_channel_twitter_rest_public:
     resource: "@CampaignChainChannelTwitterBundle/Resources/config/routing_rest.yml"
     prefix: /api/v1/p/campaignchain/channel-twitter
+
+# We clone the public REST API for the private to make it accessible to the Web app
+campaignchain_channel_twitter_rest_private_public:
+    resource: "@CampaignChainChannelTwitterBundle/Resources/config/routing_rest.yml"
+    type: campaignchain-clone/api_private_
+    prefix: /api/private/p/campaignchain/channel-twitter
