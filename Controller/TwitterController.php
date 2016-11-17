@@ -129,7 +129,7 @@ class TwitterController extends Controller
         return $this->render(
             'CampaignChainChannelTwitterBundle:Create:login.html.twig',
             [
-                'redirect' => $this->generateUrl('campaignchain_core_channel'),
+                'redirect' => $this->generateUrl('campaignchain_core_location'),
             ]
         );
     }
