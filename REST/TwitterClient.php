@@ -58,6 +58,7 @@ class TwitterClient
     {
         try {
             $client = new Client(self::BASE_URL.'/{version}', ['version' => '1.1']);
+
             $oauth = new OauthPlugin(
                 [
                     'consumer_key' => $appKey,
