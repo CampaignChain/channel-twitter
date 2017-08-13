@@ -122,8 +122,7 @@ class ChannelController extends BaseModuleController
             $channelRESTService = $this->get('campaignchain.channel.twitter.rest.client');
             $connection = $channelRESTService->connectByLocation($location);
 
-            $request = $connection->get('users/search.json?q='.$params['q'].'&count=6&include_entities=false');
-            $response = $request->send()->json();
+            $response = $connection->getUserNames($params['q']);
 
             foreach($response as $user){
                 $data[] = array(

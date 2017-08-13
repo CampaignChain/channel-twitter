@@ -19,7 +19,8 @@
     "require": {
         "campaignchain/core": "dev-master",
         "campaignchain/security-authentication-client-oauth": "dev-master",
-        "guzzle/guzzle":"~3.9"
+        "guzzlehttp/guzzle": "^6.0",
+        "guzzlehttp/oauth-subscriber": "0.3.*"
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Channel\\TwitterBundle\\": "" }
