@@ -110,7 +110,7 @@ class TwitterClient
             $res = $this->client->request($method, $uri, $body);
             return json_decode($res->getBody(), true);
         } catch(Exception $e){
-            throw new \Exception($e->getMessage(), $e->getCode());
+            throw new ExternalApiException($e->getMessage(), $e->getCode());
         }
     }
 
