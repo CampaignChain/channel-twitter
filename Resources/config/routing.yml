@@ -13,11 +13,11 @@
 # limitations under the License.
 
 campaignchain_channel_twitter_create:
-    pattern:  /channel/twitter/create
+    path:  /channel/twitter/create
     defaults: { _controller: CampaignChainChannelTwitterBundle:Twitter:create }
 
 campaignchain_channel_twitter_login:
-    pattern:  /channel/twitter/create/login
+    path:  /channel/twitter/create/login
     defaults: { _controller: CampaignChainChannelTwitterBundle:Twitter:login }
 
 # REST routes are being created automatically via FOSRestBundle.
